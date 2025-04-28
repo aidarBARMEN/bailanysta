@@ -7,7 +7,10 @@ from .views import (
 )
 
 urlpatterns = [
-    path('',                PostListCreateView.as_view(), name='post-list-create'),
-    path('user/<int:user_id>/', UserPostListView.as_view(),   name='user-posts'),
-    path('<int:pk>/like/',   ToggleLikeView.as_view(),         name='post-toggle-like'),
+  path('',                  PostListCreateView.as_view()),
+  path('<int:user_id>/',    UserPostListView.as_view()),
+  path('<int:pk>/toggle-like/', ToggleLikeView.as_view()),
+  path('user/<int:user_id>/', UserPostListView.as_view(), name='user-posts'),  # << вот это путь
+
+  
 ]
