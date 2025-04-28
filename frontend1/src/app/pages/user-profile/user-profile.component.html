@@ -1,0 +1,7 @@
+<h2>Профиль пользователя #{{ userId }}</h2>
+
+<div *ngFor="let post of posts">
+  <p><strong>{{ post.author_username }}</strong></p>
+  <p>{{ post.content }}</p>
+  <hr />
+</div>

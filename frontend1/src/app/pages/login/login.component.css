@@ -1,0 +1,67 @@
+/* центрируем форму по вертикали и горизонтали */
+.login-wrapper {
+    max-width: 360px;
+    margin: 80px auto;
+    padding: 24px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .login-wrapper h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 16px;
+  }
+  
+  .login-form span {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  .btn-login {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.2s;
+  }
+  
+  .btn-login:disabled {
+    background: #aac4e8;
+    cursor: not-allowed;
+  }
+  
+  .btn-login:not(:disabled):hover {
+    background: #0056b3;
+  }
+  
+  .error {
+    margin-top: 12px;
+    text-align: center;
+    color: #e74c3c;
+    font-size: 14px;
+  }
+  

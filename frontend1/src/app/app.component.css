@@ -1,0 +1,39 @@
+nav {
+    padding: 10px 20px;
+    background-color: #4b3838;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  nav a:hover {
+    color: #ffdd57;
+  }
+  
+  nav span {
+    margin-left: auto;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  nav a[style*="color: red"] {
+    color: red;
+    cursor: pointer;
+  }
+  
+  nav a[style*="color: red"]:hover {
+    color: darkred;
+  }
+  
+  span[style*="display: flex"] {
+    display: flex;
+    gap: 15px;
+  }
+  

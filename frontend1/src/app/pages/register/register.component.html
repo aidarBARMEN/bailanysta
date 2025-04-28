@@ -1,0 +1,7 @@
+<h2>Регистрация</h2>
+<form (ngSubmit)="onSubmit()">
+  <input [(ngModel)]="user.username" name="username" placeholder="Имя пользователя" required>
+  <input [(ngModel)]="user.email" name="email" placeholder="Email" required>
+  <input [(ngModel)]="user.password" name="password" type="password" placeholder="Пароль" required>
+  <button type="submit">Зарегистрироваться</button>
+</form>

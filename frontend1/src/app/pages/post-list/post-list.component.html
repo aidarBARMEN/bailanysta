@@ -1,0 +1,22 @@
+<h2>Создать пост</h2>
+
+<form (ngSubmit)="createPost()" #postForm="ngForm">
+  <textarea [(ngModel)]="newPostContent" name="content" rows="3" cols="40" required></textarea>
+  <br />
+  <button type="submit" [disabled]="!newPostContent">Опубликовать</button>
+</form>
+
+<hr />
+
+<h2>Лента постов</h2>
+
+<div *ngFor="let post of posts">
+  <p><strong>{{ post.author_username }}</strong></p>
+  <p>{{ post.content }}</p>
+
+  <button (click)="toggleLike(post)">
+    {{ post.is_liked ? '💔 Убрать лайк' : '❤️ Лайк' }} ({{ post.likes_count }})
+  </button>  
+
+  <hr />
+</div>

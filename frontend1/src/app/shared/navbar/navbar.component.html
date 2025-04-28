@@ -1,0 +1,22 @@
+<!-- src/app/shared/navbar/navbar.component.html -->
+<nav class="app-navbar">
+  <div class="brand">🚀 Bailanysta</div>
+  <ul class="nav-links">
+    <li><a routerLink="/posts" routerLinkActive="active">Лента</a></li>
+    <li><a routerLink="/users" routerLinkActive="active">Пользователи</a></li>
+  </ul>
+
+  <div class="spacer"></div>
+
+  <ng-container *ngIf="isLoggedIn; else guestLinks">
+    <a class="profile" routerLink="/user/{{userId}}" routerLinkActive="active">
+      {{ username }}
+    </a>
+    <button class="btn-logout" (click)="logout()">Выйти</button>
+  </ng-container>
+
+  <ng-template #guestLinks>
+    <a class="btn-auth" routerLink="/login">Войти</a>
+    <a class="btn-auth" routerLink="/register">Регистрация</a>
+  </ng-template>
+</nav>
