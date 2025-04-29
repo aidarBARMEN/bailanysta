@@ -1,59 +1,94 @@
-# Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+# Bailanysta
 
-## Development server
+## Краткое описание проекта
 
-To start a local development server, run:
+**Bailanysta** — это социальная платформа, где пользователи могут публиковать посты, просматривать ленту других пользователей и взаимодействовать друг с другом. Проект реализован в виде web-приложения с использованием стека Angular + Django REST Framework.
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Инструкции по установке и запуску
 
-## Code scaffolding
+### Backend (Django)
+1. Создайте и активируйте виртуальное окружение:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # или venv\Scripts\activate на Windows
+   ```
+2. Установите зависимости:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Запустите сервер:
+   ```bash
+   python manage.py migrate
+   python manage.py runserver
+   ```
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Frontend (Angular)
+1. Перейдите в папку `frontend/`:
+   ```bash
+   cd frontend
+   ```
+2. Установите зависимости:
+   ```bash
+   npm install
+   ```
+3. Запустите Angular-приложение:
+   ```bash
+   ng serve
+   ```
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Процесс проектирования и разработки
 
-```bash
-ng generate --help
-```
+Сначала я определил основные страницы приложения: лента постов и профиль пользователя. Затем построил архитектуру проекта с разделением backend и frontend. Основное внимание было уделено созданию логичного роутинга, REST API, JWT-аутентификации и отображению постов.
 
-## Building
+Я изначально реализовал логику, при которой:
+- Если пользователь аутентифицирован, должна отображаться кнопка **"Выйти"**.
+- Если пользователь не залогинен — кнопки **"Войти"** и **"Зарегистрироваться"**.
 
-To build the project run:
+Однако эта логика пока не работает корректно — есть баг, который я планирую исправить в следующей итерации.
 
-```bash
-ng build
-```
+Фокус был сделан на функциональности постов и возможности просмотра постов конкретного пользователя.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## Уникальные подходы и методологии
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- Использовал **JWT-токены** для безопасной аутентификации.
+- Применил **Angular reactive forms** и **RxJS** для обработки данных.
+- Организовал компоненты согласно современным принципам — переиспользуемые и разделённые по логике.
+- В Django — REST API на основе сериализаторов и классов представлений (`APIView`, `ModelViewSet`).
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+## Компромиссы
 
-For end-to-end (e2e) testing, run:
+- В текущей версии я решил не добавлять загрузку изображений, чтобы сосредоточиться на базовой функциональности.
+- AI-генерация контента и комментарии пока не реализованы, но архитектура позволяет добавить это позже.
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Известные ошибки или проблемы
 
-## Additional Resources
+- Логика отображения кнопок входа/выхода работает нестабильно и нуждается в доработке.
+- Пока нет обработки ошибок при авторизации.
+- Возможны проблемы с отображением на мобильных устройствах.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+## Почему выбран именно этот стек
+
+Я выбрал стек **Angular + Django**, потому что хорошо в нём разбираюсь и мне удобно в нём работать. Хотя я знаком и с другими технологиями, именно этот стек позволяет мне уверенно и быстро реализовывать нужный функционал. Я понимаю и frontend, и backend, и могу их надёжно связать через REST API.
+
+---
+
+## Что реализовано
+
+- Регистрация и вход с использованием JWT
+- Страница ленты всех постов
+- Страница профиля пользователя с возможностью создавать посты
+- Возможность просматривать посты конкретного пользователя
+- Адаптивная навигация (в разработке)
